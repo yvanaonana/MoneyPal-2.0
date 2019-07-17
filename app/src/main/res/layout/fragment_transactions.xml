@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+             tools:context=".TransactionsFragment"
+             android:background="@color/whiteGray"
+>
+    
+    <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <RelativeLayout
+                    android:id="@+id/relative_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:background="@color/colorPrimary">
+
+                <ImageView
+                        android:id="@+id/image_view_profil_photo"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/Gray"
+                        app:srcCompat="@drawable/ic_person_outline_black_24dp"
+                        android:layout_marginBottom="10dp"
+
+                        android:layout_marginTop="15dp"/>
+
+                <TextView
+                        android:id="@+id/text_view_text_solde"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:layout_below="@+id/image_view_profil_photo"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:text="Solde du compte a la date du 14 May"/>
+
+                <TextView
+                        android:id="@+id/text_view_solde"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:layout_below="@+id/text_view_text_solde"
+                        android:layout_centerHorizontal="true"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
+                        android:text="35 000 FCFA"/>
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view_type_transaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relative_header"
+                    android:orientation="horizontal"/>
+
+            <TextView
+                    android:id="@+id/text_view_dernieres_transactions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dernieres_transactions"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@+id/recycler_view_type_transaction"/>
+
+            <Button
+                    android:id="@+id/btn_more_transactions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="TOUT VOIR"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_below="@+id/recycler_view_type_transaction"/>
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view_last_transaction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btn_more_transactions"/>
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</FrameLayout>

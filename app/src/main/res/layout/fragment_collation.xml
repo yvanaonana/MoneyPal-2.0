@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:layout_width="match_parent" android:layout_height="match_parent"
+             tools:context=".fragment.CollationFragment">
+
+    <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <RelativeLayout
+                    android:id="@+id/relative_header_collation"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:background="@color/colorPrimary">
+
+                <TextView
+                        android:id="@+id/text_view_objet_collation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:text="Vacance a Kribi"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_centerHorizontal="true"
+                        android:textStyle="bold"
+                        android:textSize="25dp"/>
+
+                <ProgressBar
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="45px"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_below="@+id/text_view_objet_collation"
+                        android:id="@+id/progress_bar_niveau_collation"/>
+
+                <TextView
+                        android:id="@+id/text_view_text_solde_collation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:layout_below="@+id/progress_bar_niveau_collation"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:text="Solde du compte a la date du 14 May"/>
+
+                <TextView
+                        android:id="@+id/text_view_solde_collation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:layout_below="@+id/text_view_text_solde_collation"
+                        android:layout_centerHorizontal="true"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
+                        android:text="35 000 FCFA"/>
+
+                <ImageButton
+                        android:id="@+id/btn_list_collation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_margin="16dp"
+                        android:backgroundTint="@color/colorPrimary"
+                        app:srcCompat="@drawable/ic_list_black_24dp"/>
+
+                <ImageButton
+                        android:id="@+id/btn_add_collation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="16dp"
+                        android:backgroundTint="@color/colorPrimary"
+                        app:srcCompat="@drawable/ic_add_black_24dp"/>
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view_collation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relative_header_collation"/>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_below="@+id/recycler_view_collation">
+                <TextView
+                        android:id="@+id/text_view_btn_add_member"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+ADD MEMBER"
+                        android:clickable="true"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"/>
+
+                <TextView
+                        android:id="@+id/text_view_btn_pay_member"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PAY MEMBER"
+                        android:layout_marginRight="20dp"
+                        android:clickable="true"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</FrameLayout>

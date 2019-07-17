@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5BC2E1</color>
+    <color name="colorPrimaryDark">#1459C1</color>
+    <color name="colorAccent">#6CB327</color>
+    <color name="darkGray">#333333</color>
+    <color name="Gray">#C8C8C8</color>
+    <color name="whiteGray">#F7F7F7</color>
+    <color name="tranfert">#DA5E5E</color>
+    <color name="recu">#18B685</color>
+    <color name="facture">#CF6558</color>
+</resources>
