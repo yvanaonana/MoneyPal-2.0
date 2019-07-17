@@ -1,10 +1,11 @@
 package com.example.moneypal
 
 
+import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -57,7 +58,11 @@ class TransactionsFragment : Fragment() {
         val list : List<Item> = items
 
         view.recycler_view_type_transaction.apply {
-            layoutManager = LinearLayoutManager(this@TransactionsFragment.context, LinearLayoutManager.HORIZONTAL, false)
+            layoutManager = LinearLayoutManager(
+                this@TransactionsFragment.context,
+                LinearLayoutManager.HORIZONTAL,
+                false
+            )
             adapter = GroupAdapter<ViewHolder>().apply {
                 peopleSection = Section(list)
                 add(peopleSection)
@@ -68,7 +73,8 @@ class TransactionsFragment : Fragment() {
         view.text_view_text_solde.text = Calendar.getInstance().time.toString()
 
         view.btn_more_transactions.setOnClickListener{
-            startActivity<TransactionsActivity>()
+            val i = Intent(this@TransactionsFragment.context, TransactionsActivity::class.java)
+            startActivity(i)
         }
 
         transactionList = FirestoreUtil.TransactionListener(this.activity!!, this::updateRecyclerView)
@@ -79,13 +85,13 @@ class TransactionsFragment : Fragment() {
 
         fun init(){
 
-//            recycler_view_last_transaction.apply {
-//                layoutManager = LinearLayoutManager(this@TransactionsFragment.context)
-//                adapter = GroupAdapter<ViewHolder>().apply {
-//                    peopleSection = Section(items)
-//                    add(peopleSection)
-//                }
-//            }
+            recycler_view_last_transaction.apply {
+                layoutManager = LinearLayoutManager(this@TransactionsFragment.context)
+                adapter = GroupAdapter<ViewHolder>().apply {
+                    peopleSection = Section(items)
+                    add(peopleSection)
+                }
+            }
             shouldInitRecyclerView = false
         }
 

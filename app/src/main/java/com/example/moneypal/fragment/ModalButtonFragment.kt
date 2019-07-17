@@ -2,8 +2,8 @@ package com.example.moneypal.fragment
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.support.design.widget.BottomSheetDialogFragment
-import android.support.v7.widget.LinearLayoutManager
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -54,14 +54,14 @@ class ModalButtonFragment() : BottomSheetDialogFragment() {
     private fun updateRecycleView(items: List<Item>) {
 
         fun init() {
-//            recycle_view_peaple.apply {
-//                layoutManager = LinearLayoutManager(this@ModalButtonFragment.context)
-//                adapter = GroupAdapter<ViewHolder>().apply {
-//                    poepleSection = Section(items)
-//                    add(poepleSection)
-//                    //setOnItemClickListener(onItemClick)
-//                }
-//            }
+            recycle_view_peaple.apply {
+                layoutManager = LinearLayoutManager(this@ModalButtonFragment.context)
+                adapter = GroupAdapter<ViewHolder>().apply {
+                    poepleSection = Section(items)
+                    add(poepleSection)
+                    //setOnItemClickListener(onItemClick)
+                }
+            }
             shouldInitrecycleView = false
         }
 

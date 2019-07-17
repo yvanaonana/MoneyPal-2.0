@@ -4,9 +4,9 @@ import android.Manifest
 import android.content.ContentResolver
 import android.content.pm.PackageManager
 import android.net.Uri
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.app.ActivityCompat
+import androidx.core.app.ActivityCompat
 import com.example.moneypal.Model.Transaction
 import com.example.moneypal.Model.sms
 import com.example.moneypal.Model.typeTransaction

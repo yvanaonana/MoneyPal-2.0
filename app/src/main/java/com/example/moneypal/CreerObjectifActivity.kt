@@ -2,9 +2,9 @@ package com.example.moneypal
 
 import android.icu.util.Calendar
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.Snackbar
+import com.google.android.material.snackbar.Snackbar
 import android.widget.Toast
 import com.example.moneypal.Model.Objectif
 import com.example.moneypal.fragment.ModalButtonFragment

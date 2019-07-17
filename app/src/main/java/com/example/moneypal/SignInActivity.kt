@@ -2,7 +2,7 @@ package com.example.moneypal
 
 import android.app.Activity
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.moneypal.util.FirestoreUtil
 import com.firebase.ui.auth.AuthUI

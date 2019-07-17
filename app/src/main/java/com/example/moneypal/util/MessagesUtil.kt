@@ -24,14 +24,18 @@ object MessagesUtil {
 
     fun traiterMessage (message: String, typeTransaction:String, date: Date){
         if (!typeTransaction.equals("NON PRIS EN CHARGE")){
-            val montantString : String? = Regex(pattern = """\d+""").find(input = message.substring(message.indexOf("ontant")))?.value
-            val montant = Integer.parseInt(montantString)
+            try{
+                val montantString : String? = Regex(pattern = """\d+""").find(input = message.substring(message.indexOf("ontant")))?.value
+                val montant = Integer.parseInt(montantString)
 
-            val soldeString : String? = Regex(pattern = """\d+""").find(input = message.substring(message.indexOf("olde")))?.value
-            val solde = Integer.parseInt(soldeString)
-            SOLDE_COMPTE = solde
+                val soldeString : String? = Regex(pattern = """\d+""").find(input = message.substring(message.indexOf("olde")))?.value
+                val solde = Integer.parseInt(soldeString)
+                SOLDE_COMPTE = solde
 
-            FirestoreUtil.addTransaction(Transaction(typeTransaction, date, montant))
+                FirestoreUtil.addTransaction(Transaction(typeTransaction, date, montant))
+            }catch (e:Exception){
+                Log.e(TAG, "erreur lecture message")
+            }
         }
         else{
             Log.e(TAG, "format non pris en charge")

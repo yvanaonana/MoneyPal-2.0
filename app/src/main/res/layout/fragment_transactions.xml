@@ -7,7 +7,7 @@
              android:background="@color/whiteGray"
 >
     
-    <android.support.v4.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <RelativeLayout
@@ -53,7 +53,7 @@
 
             </RelativeLayout>
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view_type_transaction"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -86,12 +86,12 @@
                     android:paddingRight="15dp"
                     android:layout_below="@+id/recycler_view_type_transaction"/>
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view_last_transaction"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/btn_more_transactions"/>
         </RelativeLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>
