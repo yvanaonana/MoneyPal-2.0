@@ -15,6 +15,9 @@ import com.example.moneypal.util.MessagesUtil
 import org.jetbrains.anko.startActivity
 import java.util.*
 import kotlin.collections.ArrayList
+import android.content.Intent
+import com.google.firebase.dynamiclinks.DynamicLink
+import com.google.firebase.dynamiclinks.FirebaseDynamicLinks
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,11 +28,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_SMS), requestReadSMS)
         }else{
             readSMS()
         }
+
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
@@ -45,7 +50,7 @@ class MainActivity : AppCompatActivity() {
             null,
             "address = 'OrangeMoney'",
             null,
-            "date DESC"
+            "date"
         )
 
         if (cursor.moveToFirst()){

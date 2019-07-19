@@ -57,6 +57,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:18.1.0'
     implementation 'com.firebaseui:firebase-ui-storage:4.3.1'
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.google.firebase:firebase-dynamic-links:18.0.0'
+    implementation 'com.google.firebase:firebase-invites:17.0.0'
 
     implementation('com.hover:android-sdk:1.2.3') { transitive = true; }
     //glide
@@ -75,5 +77,3 @@ dependencies {
         experimental = true
     }
 }
-
-

@@ -1,5 +1,7 @@
 package com.example.moneypal.Model
 
+import com.example.moneypal.util.FirestoreUtil
+import com.google.firebase.auth.FirebaseAuth
 import java.util.*
 
 object typeTransaction{
@@ -12,7 +14,8 @@ object typeTransaction{
 }
 
 object solde{
-    var SOLDE_COMPTE = 0
+    var SOLDE_COMPTE = 0.0
+
 }
 
 data class Transaction(

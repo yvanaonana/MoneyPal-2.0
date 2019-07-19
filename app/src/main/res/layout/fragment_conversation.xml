@@ -4,8 +4,22 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
-                                               android:id="@+id/recycle_view_peaple"
-                                               android:layout_height="match_parent"/>
+    <Button
+            android:id="@+id/btn_inviter_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:background="@color/colorPrimary"
+            android:text="Inviter"
+            android:textColor="@android:color/white"
+            android:layout_gravity="end"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/recycle_view_peaple"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"/>
+
+
 
 </FrameLayout>

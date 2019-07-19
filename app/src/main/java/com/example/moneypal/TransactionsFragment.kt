@@ -13,6 +13,7 @@ import com.example.moneypal.Model.solde.SOLDE_COMPTE
 import com.example.moneypal.Model.typeTransaction
 import com.example.moneypal.recyclerview.item.TransactionTypeItem
 import com.example.moneypal.util.FirestoreUtil
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ListenerRegistration
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Section
@@ -68,8 +69,10 @@ class TransactionsFragment : Fragment() {
                 add(peopleSection)
             }
         }
-
-        view.text_view_solde.text = SOLDE_COMPTE.toString()
+        FirestoreUtil.getUserByUid(FirebaseAuth.getInstance().currentUser!!.uid, onComplete = {
+            SOLDE_COMPTE = it.solde.toDouble()
+            view.text_view_solde.text = SOLDE_COMPTE.toString()
+        })
         view.text_view_text_solde.text = Calendar.getInstance().time.toString()
 
         view.btn_more_transactions.setOnClickListener{

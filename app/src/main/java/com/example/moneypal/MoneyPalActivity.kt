@@ -15,7 +15,8 @@ import com.hover.sdk.api.Hover
 import com.hover.sdk.permissions.PermissionActivity
 import kotlinx.android.synthetic.main.activity_money_pal.*
 
-class MoneyPalActivity : AppCompatActivity() {
+
+class MoneyPalActivity : AppCompatActivity(){
 
     private val requestReadSMS :Int = 3
 
@@ -40,6 +41,7 @@ class MoneyPalActivity : AppCompatActivity() {
         Hover.initialize(this);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
+
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.RECEIVE_SMS), requestReadSMS)
         }
@@ -59,4 +61,5 @@ class MoneyPalActivity : AppCompatActivity() {
             .replace(R.id.frame_layout_fragment, fragment)
             .commit()
     }
+
 }

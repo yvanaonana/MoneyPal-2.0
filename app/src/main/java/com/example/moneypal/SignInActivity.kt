@@ -58,12 +58,12 @@ class SignInActivity : AppCompatActivity() {
             } else if (resultCode == Activity.RESULT_CANCELED) {
                 if (response == null) return
 
-                when (response.error?.errorCode) {
-                    ErrorCodes.NO_NETWORK ->
-                        longSnackbar(constraint_layout, "No network")
-                    ErrorCodes.UNKNOWN_ERROR ->
-                        longSnackbar(constraint_layout, "unknow error")
-                }
+//                when (response.error?.errorCode) {
+//                    ErrorCodes.NO_NETWORK ->
+//                        longSnackbar(constraint_layout, "No network")
+//                    ErrorCodes.UNKNOWN_ERROR ->
+//                        longSnackbar(constraint_layout, "unknow error")
+//                }
             }
         }
     }

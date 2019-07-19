@@ -2,6 +2,7 @@ package com.example.moneypal
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.moneypal.util.FirestoreUtil
 import com.google.firebase.auth.FirebaseAuth
 import org.jetbrains.anko.startActivity
 
@@ -14,7 +15,8 @@ class SplashActivity : AppCompatActivity() {
             startActivity<SignInActivity>()
         }
         else
-            startActivity<MoneyPalActivity>()
+            FirestoreUtil.deleteTransactions()
+            startActivity<MainActivity>()
         finish()
     }
 }

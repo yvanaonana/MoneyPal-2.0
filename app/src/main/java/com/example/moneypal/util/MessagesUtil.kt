@@ -12,10 +12,16 @@ object MessagesUtil {
 
     fun determinerTypeMessage (message:String) : String{
         if (Regex(pattern = "Rechargement reussi").containsMatchIn(input = message)){
+            val soldeString : String? = Regex(pattern = """\d+""").find(input = message.substring(message.indexOf("olde")))?.value
+            FirestoreUtil.updateSoldeCompte((soldeString!!.toDouble()))
             return typeTransaction.RECHARGEMENT
-        }else if(Regex(pattern = "Transaction reussi").containsMatchIn(input = message)) {
-            return typeTransaction.TRANFERT_RECU
+        }else if(Regex(pattern = "Transfert").containsMatchIn(input = message)) {
+            val soldeString : String? = Regex(pattern = """\d+""").find(input = message.substring(message.indexOf("olde")))?.value
+            FirestoreUtil.updateSoldeCompte((soldeString!!.toDouble()))
+            return typeTransaction.TRANFERT_ENVOI
         }else if(Regex(pattern = "Depot effectue").containsMatchIn(input = message)){
+            val soldeString : String? = Regex(pattern = """\d+""").find(input = message.substring(message.indexOf("olde")))?.value
+            FirestoreUtil.updateSoldeCompte((soldeString!!.toDouble()))
             return typeTransaction.DEPOT
         }
         else
@@ -27,10 +33,6 @@ object MessagesUtil {
             try{
                 val montantString : String? = Regex(pattern = """\d+""").find(input = message.substring(message.indexOf("ontant")))?.value
                 val montant = Integer.parseInt(montantString)
-
-                val soldeString : String? = Regex(pattern = """\d+""").find(input = message.substring(message.indexOf("olde")))?.value
-                val solde = Integer.parseInt(soldeString)
-                SOLDE_COMPTE = solde
 
                 FirestoreUtil.addTransaction(Transaction(typeTransaction, date, montant))
             }catch (e:Exception){
